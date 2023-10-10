@@ -2,7 +2,7 @@ var assert = require("assert");
 var authController = require("../../controllers/auth.controller");
 
 describe("AuthController", function () {
-  beforeEach(function () {
+  beforeEach(function setupRoles() {
     console.log("Running before each");
     authController.setRoles(["user"]);
   });
