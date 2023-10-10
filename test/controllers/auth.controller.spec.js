@@ -14,4 +14,13 @@ describe("AuthController", function () {
       );
     });
   });
+
+  describe("isAuthorizedAsync", function () {
+    it("Should return false if not authorized", function (done) {
+      authController.isAuthorizedAsync(["user"], "admin", function (isAuth) {
+        assert.equal(false, isAuth);
+        done();
+      });
+    });
+  });
 });
