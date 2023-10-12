@@ -1,4 +1,5 @@
 let expect = require("chai").expect;
+let should = require("chai").should();
 let authController = require("../../controllers/auth.controller");
 
 describe("AuthController", function () {
@@ -18,7 +19,7 @@ describe("AuthController", function () {
       authController.setRoles(["user", "admin"]);
       let isAuth = authController.isAuthorized("admin");
 
-      expect(isAuth).to.be.true;
+      isAuth.should.be.true;
     });
 
     it("Should not allow get if not authorized");
