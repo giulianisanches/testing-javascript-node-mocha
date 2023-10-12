@@ -16,6 +16,9 @@ describe("AuthController", function () {
       authController.setRoles(["user", "admin"]);
       assert.equal(true, authController.isAuthorized("admin"));
     });
+
+    it("Should not allow get if not authorized");
+    it("Should allow get if authorized");
   });
 
   describe("isAuthorizedAsync", function () {
