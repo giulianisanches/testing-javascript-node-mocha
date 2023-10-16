@@ -1,5 +1,4 @@
 let expect = require("chai").expect;
-let should = require("chai").should();
 let authController = require("../../controllers/auth.controller");
 
 describe("AuthController", function () {
