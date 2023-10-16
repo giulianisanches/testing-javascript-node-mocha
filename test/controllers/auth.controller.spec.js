@@ -1,5 +1,10 @@
 let expect = require("chai").expect;
 let authController = require("../../controllers/auth.controller");
+let chai = require("chai");
+let chaiAsPromised = require("chai-as-promised");
+
+chai.use(chaiAsPromised);
+chai.should();
 
 describe("AuthController", function () {
   beforeEach(function setupRoles() {
@@ -31,6 +36,13 @@ describe("AuthController", function () {
         expect(isAuth).to.be.false;
         done();
       });
+    });
+  });
+
+  describe("isAuthorizedPromise", function () {
+    it("Should return false if not authorized", function () {
+      return authController.isAuthorizedPromise("admin").should.eventually.be
+        .false;
     });
   });
 });
